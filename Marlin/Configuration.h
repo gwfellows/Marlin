@@ -344,7 +344,7 @@
 #define PID_K1 0.95      // Smoothing factor within the PID
 #if ENABLED(PIDTEMP)
   #define PID_AUTOTUNE_MENU // Add PID Autotune to the LCD "Temperature" menu to run M303 and apply the result.
-  #define PID_DEBUG // Sends debug data to the serial port.
+  //#define PID_DEBUG // Sends debug data to the serial port.
   //#define PID_OPENLOOP 1 // Puts PID in open loop. M104/M140 sets the output power from 0 to PID_MAX
   //#define SLOW_PWM_HEATERS // PWM with very low frequency (roughly 0.125Hz=8s) and minimum state time of approximately 1s useful for heaters driven by a relay
   //#define PID_PARAMS_PER_HOTEND // Uses separate PID parameters for each extruder (useful for mismatched extruders)
@@ -369,10 +369,10 @@
   //#define  DEFAULT_Ki 2.25
   //#define  DEFAULT_Kd 440
 
-  // JG Aurora A3
-  #define  DEFAULT_Kp 26.92
-  #define  DEFAULT_Ki 1.81
-  #define  DEFAULT_Kd 99.92
+  // JG Aurora A3 w/ E#Dv6
+  #define  DEFAULT_Kp 15.16
+  #define  DEFAULT_Ki 0.91
+  #define  DEFAULT_Kd 63.04
 
 #endif // PIDTEMP
 
@@ -388,7 +388,7 @@
 // If your configuration is significantly different than this and you don't understand the issues involved, you probably
 // shouldn't use bed PID until someone else verifies your hardware works.
 // If this is enabled, find your own PID constants below.
-//#define PIDTEMPBED
+#define PIDTEMPBED
 
 //#define BED_LIMIT_SWITCHING
 
@@ -406,15 +406,19 @@
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define  DEFAULT_bedKp 344.85
-  #define  DEFAULT_bedKi 66.82
-  #define  DEFAULT_bedKd 444.95
+  //#define  DEFAULT_bedKp 544.85
+  //#define  DEFAULT_bedKi 66.82
+  //#define  DEFAULT_bedKd 444.95
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from pidautotune
   //#define  DEFAULT_bedKp 97.1
   //#define  DEFAULT_bedKi 1.41
   //#define  DEFAULT_bedKd 1675.16
+
+  #define  DEFAULT_bedKp 156.24
+  #define  DEFAULT_bedKi 18.70
+  #define  DEFAULT_bedKd 326.38
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
