@@ -369,7 +369,7 @@
   //#define  DEFAULT_Ki 2.25
   //#define  DEFAULT_Kd 440
 
-  // JG Aurora A3 w/ E#Dv6
+  // JG Aurora A3 w/ E3Dv6
   #define  DEFAULT_Kp 15.16
   #define  DEFAULT_Ki 0.91
   #define  DEFAULT_Kd 63.04
@@ -795,8 +795,8 @@
 #define Y_BED_SIZE 200
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -33
-#define Y_MIN_POS -25
+#define X_MIN_POS -15
+#define Y_MIN_POS -20
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
 #define Y_MAX_POS Y_BED_SIZE
